@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaxSumInLine.FileLinesSource">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAAAAAAACAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileLinesSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaxSumInLine.NumLineWithMaxSum">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAACAAAAAQAAAAAAAAAACIA=</HashCode>
+      <FileName>NumLineWithMaxSum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxSumInLine.InMemoryLinesSource">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InMemoryLinesSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

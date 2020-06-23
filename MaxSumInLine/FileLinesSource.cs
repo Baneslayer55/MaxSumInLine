@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaxSumInLine
 {
-    public class FileLinesSource : ILinesSource
+    public class FileLinesSource : ILinesSource, IDisposable
     {
         private FileStream importedFile;
 
@@ -29,9 +29,10 @@ namespace MaxSumInLine
             else
             {
                 nextLine = null;
-                importedFile.Close();
                 return false;
             }            
         }
+
+        public void Dispose() { importedFile.Dispose(); }
     }
 }

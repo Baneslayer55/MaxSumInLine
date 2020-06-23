@@ -15,42 +15,48 @@ namespace MaxSumInLine
                     Console.WriteLine("Please, enter file's path:");
                     string filePath = Console.ReadLine();
 
-                    try
+                    using (FileLinesSource importedFile = new FileLinesSource(filePath))
                     {
-                        FileLinesSource importedFile = new FileLinesSource(filePath);
-                        NumLineWithMaxSum maxSum = new NumLineWithMaxSum(importedFile);
+                        try
+                        {
+                            NumLineWithMaxSum maxSum = new NumLineWithMaxSum(importedFile);
 
-                        if (maxSum.NumLineWithMaxSumValue>0)
-                        {
-                            Console.WriteLine($"In your file line {maxSum.NumLineWithMaxSumValue} has max value!\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine("There are no valid data in input file!\n");
-                        }
-
-                        if (maxSum.InvalidStrings.Count > 0)
-                        {
-                            Console.WriteLine("Invalid strings in your file:");
-                            foreach (string str in maxSum.InvalidStrings)
+                            if (maxSum.NumLineWithMaxSumValue > 0)
                             {
-                                Console.WriteLine(str);
+                                Console.WriteLine($"In your file line {maxSum.NumLineWithMaxSumValue} has max value!\n");
                             }
-                        }
-                        else if (maxSum.NumLineWithMaxSumValue == 0 && maxSum.InvalidStrings.Count == 0)
-                        {
-                            Console.WriteLine("Hey! Рath leads to empty file. Check it!");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Well done! All datas in your file are valid! Grats!");
-                        }
-                        Console.WriteLine("\n");
+                            else
+                            {
+                                Console.WriteLine("There are no valid data in input file!\n");
+                            }
 
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
+                            if (maxSum.InvalidStrings.Count > 0)
+                            {
+                                Console.WriteLine("Invalid strings in your file:");
+                                foreach (string str in maxSum.InvalidStrings)
+                                {
+                                    Console.WriteLine(str);
+                                }
+                            }
+                            else if (maxSum.NumLineWithMaxSumValue == 0 && maxSum.InvalidStrings.Count == 0)
+                            {
+                                Console.WriteLine("Hey! Рath leads to empty file. Check it!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Well done! All datas in your file are valid! Grats!");
+                            }
+                            Console.WriteLine("\n");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        finally
+                        {
+                            importedFile.Dispose();
+                        }
                     }
                 }
             }

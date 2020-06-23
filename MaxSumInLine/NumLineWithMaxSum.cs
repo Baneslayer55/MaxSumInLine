@@ -11,13 +11,9 @@ namespace MaxSumInLine
     {
         private ILinesSource importedFile;
 
-        private List<string> invalidStrings = new List<string>();
+        public int NumLineWithMaxSumValue { get; private set; }
 
-        private int numLinewWithMaxSum = 0;
-
-        public int NumLineWithMaxSumValue => numLinewWithMaxSum;
-
-        public List<string> InvalidStrings => invalidStrings;
+        public List<string> InvalidStrings { get; private set; } = new List<string>();
 
         public NumLineWithMaxSum(ILinesSource importedFile)
         {
@@ -25,7 +21,7 @@ namespace MaxSumInLine
             SetParameters();
         }
         
-        private bool TryGetSumInLane(string inputString, out double sum) 
+        private bool TryGetSumInLine(string inputString, out double sum) 
         {
             if (inputString.Length > 0)
             {
@@ -61,18 +57,18 @@ namespace MaxSumInLine
             {
                 count++;
 
-                if (TryGetSumInLane(tempString, out double curValue))
+                if (TryGetSumInLine(tempString, out double curValue))
                 {
                     validStrings.Add(count, curValue);
                 }
                 else
                 {
-                    invalidStrings.Add(tempString);
+                    InvalidStrings.Add(tempString);
                 }
             }
             if (validStrings.Count > 0)
             {
-                numLinewWithMaxSum = validStrings.Aggregate((max, cur) => max.Value > cur.Value ? max : cur).Key;
+                NumLineWithMaxSumValue = validStrings.Aggregate((max, cur) => max.Value > cur.Value ? max : cur).Key;
             }
         }
     }

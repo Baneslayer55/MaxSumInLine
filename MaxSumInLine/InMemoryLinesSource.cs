@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaxSumInLine
 {
-    public class InMemoryLinesSource:ILinesSource
+    public class InMemoryLinesSource : ILinesSource
     {
         private string[] inMemoryLines;
 

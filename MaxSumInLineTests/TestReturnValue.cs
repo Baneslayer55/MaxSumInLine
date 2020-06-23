@@ -82,7 +82,7 @@ namespace MaxSumInLineTests
         }
 
         [TestMethod]
-        public void WillItHandleHeAsked_OfCourseIAnswered()
+        public void NumLineWithMaxSum_NumLineWithMaxSumValue_ZeroAndNegativeSum_1Return()
         {
             int expected = 1;
 
